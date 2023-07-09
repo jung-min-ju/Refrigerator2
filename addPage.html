@@ -13,7 +13,7 @@
     <div id="wrap">
         <header>
             <h1>
-                <a href="./mainPage.html">냉장고 관리</a>
+                <a href="./index.html">냉장고 관리</a>
             </h1>
             <h1>품목 추가</h1>
         </header>
@@ -65,7 +65,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <input calss="item-where" placeholder="냉동실 or 냉장실">
+                            <input class="item-where" placeholder="냉동실 or 냉장실">
                             <select name="whereSelect" id="">
 
                                 <option value="option1">선택</option>
@@ -76,20 +76,27 @@
                     </tr>
                     <tr>
                         <td>
-                            <input calss="item-date" placeholder="유통기한 입력(YYMMDD)">
+                            <input class="item-exp" placeholder="유통기한 입력(YYMMDD)">
                             <button>선택</button>
                         </td>
                         
                     </tr>
                     <tr>
                         <td>
-                            <input calss="item-amount" placeholder="수량 입력">
-                            <button>추가</button>
+                            <input class="item-amount" placeholder="수량 입력">
+                            <button class="addBtn">추가</button>
                         </td>
-                        
                     </tr>
 
-
+                    <tr>
+                        <td>
+                            <p>현재 저장된 제품</p>
+                            <input class="item-show" placeholder="none" readonly>
+                            <button class="deleteAllBtn">전체초기화</button>
+                            <button class="delBtn">삭제</button>
+                        </td>
+                    </tr>
+                    
                 </tbody>
             </table>  
             
@@ -129,8 +136,10 @@
     <div>
         <script type="module" src="./js/app.js"></script>
         <script type="module" src="./js/event.js"></script>
-        <script type="module" src="./js/checkItem.js"></script>
         <script type="module" src="./js/addItem.js"></script>
+        <!-- <script type="module" src="./js/checkItem.js"></script> -->
+        <script type="module" src="./js/itemState.js"></script>
+        
     </div>
 
 
