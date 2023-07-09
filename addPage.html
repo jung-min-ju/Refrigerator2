@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>냉장고</title>
+    <meta charset="utf-8">
+
+    <style src="./css/index.css"></style>
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <h1>품목 추가</h1>
+        </header>
+    
+        <div id="container">
+    
+    
+            <table>
+                <thead>
+                    <tr>
+                        <td>
+                            <div>
+                                <span>사진 입력</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button>촬영</button>
+                            <button>불러오기</button>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div>
+                                <span>직접입력</span>
+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="item-name" placeholder="제품 이름 입력">
+                            <select name="nameSelect" id="">
+
+                                <option value="option1">선택</option>
+                                <option value="option2">유제품</option>
+                                <option value="option3">육류</option>
+                                <option value="option4">어류</option>
+                                <option value="option5">음료류</option>
+                                <option value="option6">음료류</option>
+                                <option value="option7">즉석식품류</option>
+                                <option value="option8">기타</option>
+                            </select>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input calss="item-where" placeholder="냉동실 or 냉장실">
+                            <select name="whereSelect" id="">
+
+                                <option value="option1">선택</option>
+                                <option value="option2">냉동실</option>
+                                <option value="option3">냉장실</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input calss="item-date" placeholder="유통기한 입력(YYMMDD)">
+                            <button>선택</button>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                            <input calss="item-amount" placeholder="수량 입력">
+                            <button>추가</button>
+                        </td>
+                        
+                    </tr>
+
+
+                </tbody>
+            </table>  
+            
+    
+        </div>
+
+        
+
+
+
+        <footer>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <table>
+                <tr>
+                    <td>
+                        <span>업데이트 예정 사항</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>유통기한 달력 추가</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>달력 추가</span>
+                    </td>
+                </tr>
+                
+            </table>
+        </footer>
+    
+
+
+    </div>
+    
+    <div>
+        <script type="module" src="./js/app.js"></script>
+        <script type="module" src="./js/event.js"></script>
+        <script type="module" src="./js/checkItem.js"></script>
+        <script type="module" src="./js/addItem.js"></script>
+    </div>
+
+
+</body>
+
+</html>
