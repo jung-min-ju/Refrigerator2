@@ -4,47 +4,6 @@
 //update
 //delete
 
-function itemLoad() {
-
-    const itemStateString = window.localStorage.getItem('itemState');
-    //console.log(itemStateString);
-    if (itemStateString !== null) {
-        const presentItemState = JSON.parse(itemStateString);
-        const tableContainer = document.querySelector(".item-show");
-
-        const row = document.createElement("tr");
-        
-
-        presentItemState.name.forEach( (arr) => {
-            itemState.name.push(arr); 
-            const nameCell = document.createElement("td");
-            nameCell.textContent = arr;
-            row.appendChild(nameCell);
-        });
-        presentItemState.state.forEach((arr) =>{
-            itemState.state.push(arr);
-            const stateCell = document.createElement("td");
-            stateCell.textContent = arr;
-            row.appendChild(stateCell);
-        })
-        presentItemState.exp.forEach((arr) =>{
-            itemState.exp.push(arr);  
-            const nameCell = document.createElement("td");
-            nameCell.textContent = arr;
-            row.appendChild(nameCell);  
-        })
-        presentItemState.amount.forEach((arr) =>{
-            itemState.amount.push(arr);
-            const nameCell = document.createElement("td");
-            nameCell.textContent = arr;
-            row.appendChild(nameCell);    
-        })
-                
-    }
-
-    
-}
-
 export const itemState = { //냉장고 제품 정보
     name: [],   // 제품 이름
     state: [],  // 저장 공간 / freeze : 냉동 , cool : 냉장
@@ -53,31 +12,41 @@ export const itemState = { //냉장고 제품 정보
 }
 
 export function itemAdd() {
-    const nameInput = document.querySelector(".item-name").value;
+    const nameInput = document.querySelector(".item-name").value; // 입력한 정보
     const stateInput = document.querySelector(".item-where").value;
     const expInput = document.querySelector(".item-exp").value;
     const amountInput = document.querySelector(".item-amount").value;
 
-    itemState.name.push(nameInput);
+    if(nameInput === "" || stateInput === "" || expInput === "" || amountInput ===""){
+        alert("빈칸 없이 입력 부탁드립니다.");
+        return;
+    } 
+
+    itemState.name.push(nameInput); //itemState에 입력한 정보 저장
     itemState.state.push(stateInput);
     itemState.exp.push(expInput);
     itemState.amount.push(amountInput);
 
-    const itemStateString = JSON.stringify(itemState);
+    console.log(itemState);
+    const itemStateString = JSON.stringify(itemState); //서버에 저장
     window.localStorage.setItem('itemState', itemStateString);
+    
+    alert("성공적으로 추가되었습니다!");
 }
 
-export function itemDelte() {
-
-}
-
-export function itemEdit() {
-
-}
-
-export function itemRender() {
+export function itemDelte() { // 제품 삭제 기능 ( 추가 예정 )
 
 }
 
+export function itemAllDelete() { //전체 초기화 버튼
+    window.localStorage.clear();  //모든 저장된 제품 삭제
+    alert("냉장고 초기화");
+}
 
-itemLoad();
+export function itemEdit() { // 제품 정보 수정 기능 ( 추가 예정 )
+
+}
+
+export function itemRender() { // 제품 정보 랜더링 기능 ( 추가 예정 )
+
+}
